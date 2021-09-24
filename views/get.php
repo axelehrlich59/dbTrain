@@ -27,8 +27,16 @@ while ($donnes = $reponse->fetch()) {
     <div class="d-flex justify-content-center">
         <div class="card border border-dark mb-5 mt-3" style="width: 18rem;">
             <ul class="list-group list-group-flush border border-dark">
-                <li class="list-group-item">Prénom : <strong><?php echo $donnes['firstName'] ?></strong></li>
-                <li class="list-group-item">Nom : <strong><?php echo $donnes['lastName']  ?></strong></li>
+                <li class="list-group-item">Prénom : 
+                    <strong><?php echo $donnes['firstName'] ?></strong>
+                       
+                            <div class="d-flex justify-content-end">
+                               <a href="../views/delete.php"><button type="submit" class="btn btn-danger">Supprimer</button></a>
+                            </div>
+                </li>
+                <li class="list-group-item">Nom : 
+                    <strong><?php echo $donnes['lastName']  ?></strong>
+                </li>
             </ul>
         </div>
     </div>
