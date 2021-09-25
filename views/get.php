@@ -19,23 +19,24 @@ require '../config/connect.php';
 
 $db = connection();
 
-$reponse = $db->query('SELECT * FROM news');
+$req = $db->query('SELECT * FROM news');
 
-while ($donnes = $reponse->fetch()) {
+while($data = $req->fetchObject()) {
 
 ?>
+
     <div class="d-flex justify-content-center">
         <div class="card border border-dark mb-5 mt-3" style="width: 18rem;">
             <ul class="list-group list-group-flush border border-dark">
                 <li class="list-group-item">Prénom : 
-                    <strong><?php echo $donnes['firstName'] ?></strong>
+                    <strong><?php echo $data->firstName; ?></strong>
                        
                             <div class="d-flex justify-content-end">
-                               <a href="../views/delete.php"><button type="submit" class="btn btn-danger">Supprimer</button></a>
+                               <a href="../views/delete.php?id=<?php echo $data->id;?>"><button type="submit" class="btn btn-danger">Supprimer</button></a>
                             </div>
                 </li>
                 <li class="list-group-item">Nom : 
-                    <strong><?php echo $donnes['lastName']  ?></strong>
+                    <strong><?php echo $data->lastName;  ?></strong>
                 </li>
             </ul>
         </div>

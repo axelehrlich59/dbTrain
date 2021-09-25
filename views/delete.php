@@ -4,13 +4,11 @@ require '../config/connect.php';
 
 $db = connection();
 
-if (isset($_GET['agentsdelete'])) {
+$id = $_GET["id"];
+$sqlRequestDelete = "DELETE FROM news WHERE id=:ids";
+$reqDeleteProducts = $db->prepare($sqlRequestDelete);
+$reqDeleteProducts->bindParam(':ids',$id);
+$reqDeleteProducts->execute();
 
-    $agents_id = $_GET['agentsdelete'];
-    $delete = $db->prepare("DELETE FROM agents WHERE agents_id= ? ");
-    //header('location: ../views/get.php');
-
-    $delete-> execute();
-}
-
+header('Location: ../views/get.php');
 ?>

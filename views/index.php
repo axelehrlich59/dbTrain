@@ -10,13 +10,16 @@
         $lastname = htmlspecialchars(trim($_POST['lastname']));
     }
 
-    $req = $db->prepare('INSERT INTO news(firstName, lastName) VALUES(:nom, :possesseur)');
+    $sqlInsertData = "INSERT INTO news (firstName, lastName) values(:firstname,:lastname)";
+    $reqInsertData = $db->prepare($sqlInsertData);
+    $reqInsertData->bindParam(":firstname",$firstname);
+    $reqInsertData->bindParam(":lastname",$lastname);
+    $reqInsertData->execute();
 
+    $req = $db->query('SELECT * FROM news');
+
+  
     
-    $req->execute(array(
-        'nom' => $firstname,
-        'possesseur' => $lastname,
-        ));
     
     
 
