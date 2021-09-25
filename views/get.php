@@ -31,15 +31,18 @@ while($data = $req->fetchObject()) {
                 <li class="list-group-item">Prénom : 
                     <strong><?php echo $data->firstName; ?></strong>
                        
-                            <div class="d-flex justify-content-end">
-                               <a href="../views/delete.php?id=<?php echo $data->id;?>"><button type="submit" class="btn btn-danger">Supprimer</button></a>
-                            </div>
+                            
                 </li>
                 <li class="list-group-item">Nom : 
                     <strong><?php echo $data->lastName;  ?></strong>
                 </li>
             </ul>
         </div>
+            <div class="d-flex align-items-center ml-2 mb-5">
+                <div class="">
+                    <a href="../views/delete.php?id=<?php echo $data->id;?>"><button type="submit" class="btn btn-danger">Supprimer</button></a>
+                </div>
+            </div>    
     </div>
 
     
@@ -49,7 +52,7 @@ while($data = $req->fetchObject()) {
 ?>
 
     <form action="../post.html">
-        <div class="d-flex justify-content-center mb-3">
+        <div class="d-flex justify-content-center mt-5 mb-3">
             <button class="btn btn-primary" type="submit">Retour à la page d'acceuil</button>
         </div>
     </form> 
