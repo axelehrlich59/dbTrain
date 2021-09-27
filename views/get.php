@@ -41,6 +41,7 @@ while($data = $req->fetchObject()) {
             <div class="d-flex align-items-center ml-2 mb-5">
                 <div class="">
                     <a href="../views/delete.php?id=<?php echo $data->id;?>"><button type="submit" class="btn btn-danger">Supprimer</button></a>
+                    <a href="../views/update.php?id=<?php echo $data->id;?>"><button type="submit" class="btn btn-warning">Modifier</button></a>
                 </div>
             </div>    
     </div>
