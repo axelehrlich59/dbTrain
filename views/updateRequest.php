@@ -12,14 +12,14 @@ else {
     $id = '';
 }
 
-if(isset($_POST['titre'])) {
+if(isset($_POST['firstname'])) {
     $firstname = htmlspecialchars(trim($_POST['firstname']));
 }
 else {
     $firstname = '';
 }
 
-if(isset($_POST['prix'])) {
+if(isset($_POST['lastname'])) {
     $lastname = htmlspecialchars(trim($_POST['lastname']));
 }
 else {

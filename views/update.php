@@ -41,7 +41,7 @@ $reqData->execute();
         while($data = $reqData->fetchObject()) {   
     ?>
         <div class="form-group d-flex justify-content-center mt-4">
-            <input type="text" class="d-none form-control col-md-4" value="<?= $data->id ?>" id="modfifId"  placeholder="Prénom" name="id">
+            <input type="text" class="d-none form-control col-md-4" value="<?= $data->id ?>" id="id"  placeholder="Prénom" name="id">
             <input type="text" class="form-control col-md-4" value="<?=$data->firstName?>" id="modifPrenom" placeholder="Prénom" name="firstname">
             <input type="text" class="form-control col-md-4" value="<?= $data->lastName ?>" id="modfifNom"  placeholder="Nom" name="lastname">
             <button type="submit" class="btn btn-primary">Modifier</button>
